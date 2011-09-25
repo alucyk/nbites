@@ -260,6 +260,21 @@ ColorCreator::ColorCreator(DataManager::ptr dataManager, QWidget *parent) :
     ui->vMax->setValue(vMax[currentColor]);
     ui->zSlice->setValue(zSlice);
 
+    //ui->hMin_display->setValue(hMin[currentColor] * 100);
+
+    // set the slider displays
+    ui->hMin_display->setValue(hMin[currentColor] * 100);
+    ui->hMax_display->setValue(hMax[currentColor] * 100);
+    ui->sMin_display->setValue(sMin[currentColor] * 100);
+    ui->sMax_display->setValue(sMax[currentColor] * 100);
+    ui->zMin_display->setValue(zMin[currentColor] * 100);
+    ui->zMax_display->setValue(zMax[currentColor] * 100);
+    ui->yMin_display->setValue(yMin[currentColor]);
+    ui->yMax_display->setValue(yMax[currentColor]);
+    ui->vMin_display->setValue(vMin[currentColor]);
+    ui->vMax_display->setValue(vMax[currentColor]);
+    ui->zSlice_display->setValue(zSlice);
+
     firstPoint.setX(-1);
     firstPoint.setY(-1);
     setMouseTracking(true);
@@ -827,6 +842,16 @@ void ColorCreator::on_hMin_valueChanged(int value)
     updateColors();
     QTextStream out(stdout);
     out << "Set H Min value to " << value << "\n";
+    ui->hMin_display->setValue(value);
+}
+
+void ColorCreator::on_hMin_display_valueChanged(int value)
+{
+    hMin[currentColor] = (float)value / 100.0f;
+    updateColors();
+    QTextStream out(stdout);
+    out << "Set H Min value to " << value << "\n";
+    ui->hMin->setValue(value);
 }
 
 void ColorCreator::on_hMax_valueChanged(int value)

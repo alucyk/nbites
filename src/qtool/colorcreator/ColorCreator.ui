@@ -600,7 +600,7 @@
   <widget class="QRadioButton" name="radioButton">
    <property name="geometry">
     <rect>
-     <x>810</x>
+     <x>650</x>
      <y>770</y>
      <width>102</width>
      <height>20</height>
@@ -613,7 +613,7 @@
   <widget class="QRadioButton" name="ColorChange">
    <property name="geometry">
     <rect>
-     <x>810</x>
+     <x>640</x>
      <y>800</y>
      <width>111</width>
      <height>16</height>
@@ -626,7 +626,7 @@
   <widget class="QPushButton" name="changeColor">
    <property name="geometry">
     <rect>
-     <x>810</x>
+     <x>800</x>
      <y>830</y>
      <width>114</width>
      <height>32</height>
@@ -635,6 +635,136 @@
    <property name="text">
     <string>Update Color</string>
    </property>
+  </widget>
+  <widget class="QSpinBox" name="hMin_display">
+   <property name="geometry">
+    <rect>
+     <x>693</x>
+     <y>280</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="hMax_display">
+   <property name="geometry">
+    <rect>
+     <x>693</x>
+     <y>310</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="sMin_display">
+   <property name="geometry">
+    <rect>
+     <x>693</x>
+     <y>340</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="sMax_display">
+   <property name="geometry">
+    <rect>
+     <x>693</x>
+     <y>370</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="zMin_display">
+   <property name="geometry">
+    <rect>
+     <x>693</x>
+     <y>400</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="zMax_display">
+   <property name="geometry">
+    <rect>
+     <x>693</x>
+     <y>430</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="yMin_display">
+   <property name="geometry">
+    <rect>
+     <x>693</x>
+     <y>460</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="yMax_display">
+   <property name="geometry">
+    <rect>
+     <x>693</x>
+     <y>490</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="vMin_display">
+   <property name="geometry">
+    <rect>
+     <x>693</x>
+     <y>530</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="vMax_display">
+   <property name="geometry">
+    <rect>
+     <x>693</x>
+     <y>569</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="zSlice_display">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>240</y>
+     <width>59</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>787</x>
+     <y>784</y>
+     <width>141</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Table Mode</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Define/Undefine</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

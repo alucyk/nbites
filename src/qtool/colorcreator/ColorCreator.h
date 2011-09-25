@@ -95,6 +95,8 @@ private slots:
 
     void on_hMin_valueChanged(int value);
 
+    void on_hMin_display_valueChanged(int value);
+
     void on_hMax_valueChanged(int value);
 
     void on_sMin_valueChanged(int value);
