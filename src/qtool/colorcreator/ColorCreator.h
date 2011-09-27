@@ -42,6 +42,8 @@
 #define RED_COL 0x20
 #define NAVY_COL 0x40
 
+#define UPDATE_INCREMENT 10
+
 namespace Ui {
     class ColorCreator;
 }
@@ -95,17 +97,39 @@ private slots:
 
     void on_hMin_valueChanged(int value);
 
+    void on_hMin_sliderReleased();
+
     void on_hMin_display_valueChanged(int value);
 
     void on_hMax_valueChanged(int value);
 
+    void on_hMax_sliderReleased();
+
+    void on_hMax_display_valueChanged(int value);
+
     void on_sMin_valueChanged(int value);
+
+    void on_sMin_sliderReleased();
+
+    void on_sMin_display_valueChanged(int value);
 
     void on_sMax_valueChanged(int value);
 
+    void on_sMax_sliderReleased();
+
+    void on_sMax_display_valueChanged(int value);
+
     void on_yMin_valueChanged(int value);
 
+    void on_yMin_sliderReleased();
+
+    void on_yMin_display_valueChanged(int value);
+
     void on_yMax_valueChanged(int value);
+
+    void on_yMax_sliderReleased();
+
+    void on_yMax_display_valueChanged(int value);
 
     void on_zSlice_valueChanged(int value);
 
@@ -141,7 +165,11 @@ private slots:
 
     void on_edgeDiff_valueChanged(int value);
 
-    void on_vMin_valueChanged(int value);
+    // void on_vMin_valueChanged(int value);
+
+    void on_vMin_sliderReleased();
+
+    void on_vMin_display_valueChanged(int value);
 
     void on_vMax_valueChanged(int value);
 

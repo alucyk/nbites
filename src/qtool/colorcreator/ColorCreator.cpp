@@ -838,60 +838,169 @@ void ColorCreator::on_nextButton_clicked()
 
 void ColorCreator::on_hMin_valueChanged(int value)
 {
-    hMin[currentColor] = (float)value / 100.0f;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set H Min value to " << value << "\n";
+    if(value%UPDATE_INCREMENT == 0){
+
+        hMin[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set H Min value to " << value << "\n";
+    }
     ui->hMin_display->setValue(value);
+}
+
+
+void ColorCreator::on_hMin_sliderReleased()
+{
+    int value = ui->hMin->value();
+
+    if(value%UPDATE_INCREMENT !=0){
+        hMin[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set H Min value to " << value << "\n";
+    }
 }
 
 void ColorCreator::on_hMin_display_valueChanged(int value)
 {
+    if (value != ui->hMin->value()){
+        ui->hMin->setValue(value);
+
+        //press and release the slider to invoke sliderReleased
+        ui->hMin->setSliderDown(true);
+        ui->hMin->setSliderDown(false);
+
+    }
+    /*
     hMin[currentColor] = (float)value / 100.0f;
     updateColors();
     QTextStream out(stdout);
     out << "Set H Min value to " << value << "\n";
-    ui->hMin->setValue(value);
+    */
+    //ui->hMin->setValue(value);
 }
 
 void ColorCreator::on_hMax_valueChanged(int value)
 {
+    ui->hMax_display->setValue(value);
+}
+
+void ColorCreator::on_hMax_sliderReleased()
+{
+    int value = ui->hMax->value();
     hMax[currentColor] = (float)value / 100.0f;
     updateColors();
     QTextStream out(stdout);
     out << "Set H Max value to " << value << "\n";
 }
 
+void ColorCreator::on_hMax_display_valueChanged(int value)
+{
+    hMax[currentColor] = (float)value / 100.0f;
+    updateColors();
+    QTextStream out(stdout);
+    out << "Set H Max value to " << value << "\n";
+    ui->hMax->setValue(value);
+}
+
+//S Min
 void ColorCreator::on_sMin_valueChanged(int value)
 {
+    ui->sMin_display->setValue(value);
+}
+
+void ColorCreator::on_sMin_sliderReleased()
+{
+    int value = ui->sMin->value();
     sMin[currentColor] = (float)value / 100.0f;
     updateColors();
     QTextStream out(stdout);
     out << "Set S Min value to " << value << "\n";
 }
 
+void ColorCreator::on_sMin_display_valueChanged(int value)
+{
+    sMin[currentColor] = (float)value / 100.0f;
+    updateColors();
+    QTextStream out(stdout);
+    out << "Set S Min value to " << value << "\n";
+    ui->sMin->setValue(value);
+}
+
+
+
+//sMax
 void ColorCreator::on_sMax_valueChanged(int value)
+{
+    ui->sMax_display->setValue(value);
+}
+
+void ColorCreator::on_sMax_sliderReleased()
+{
+    int value = ui->sMax->value();
+    sMax[currentColor] = (float)value / 100.0f;
+    updateColors();
+    QTextStream out(stdout);
+    out << "Set S max value to " << value << "\n";
+}
+
+void ColorCreator::on_sMax_display_valueChanged(int value)
 {
     sMax[currentColor] = (float)value / 100.0f;
     updateColors();
     QTextStream out(stdout);
-    out << "Set S Max value to " << value << "\n";
+    out << "Set S max value to " << value << "\n";
+    ui->sMax->setValue(value);
 }
 
+//Y Min
 void ColorCreator::on_yMin_valueChanged(int value)
 {
+    ui->yMin_display->setValue(value);
+}
+
+void ColorCreator::on_yMin_sliderReleased()
+{
+    int value = ui->yMin->value();
     yMin[currentColor] = value;
     updateColors();
     QTextStream out(stdout);
     out << "Set Y Min value to " << value << "\n";
 }
 
+void ColorCreator::on_yMin_display_valueChanged(int value)
+{
+    yMin[currentColor] = value;
+    updateColors();
+    QTextStream out(stdout);
+    out << "Set Y Min value to " << value << "\n";
+    ui->yMin->setValue(value);
+}
+
+
+
+//yMax
 void ColorCreator::on_yMax_valueChanged(int value)
+{
+    ui->yMax_display->setValue(value);
+}
+
+void ColorCreator::on_yMax_sliderReleased()
+{
+    int value = ui->yMax->value();
+    yMax[currentColor] = value;
+    updateColors();
+    QTextStream out(stdout);
+    out << "Set Y max value to " << value << "\n";
+}
+
+void ColorCreator::on_yMax_display_valueChanged(int value)
 {
     yMax[currentColor] = value;
     updateColors();
     QTextStream out(stdout);
-    out << "Set Y Max value to " << value << "\n";
+    out << "Set Y max value to " << value << "\n";
+    ui->yMax->setValue(value);
 }
 
 void ColorCreator::on_zSlice_valueChanged(int value)
@@ -1187,12 +1296,27 @@ void ColorCreator::on_edgeDiff_valueChanged(int value)
     updateThresh(false, true, false);
 }
 
+/*
 void ColorCreator::on_vMin_valueChanged(int value)
 {
+    ui->vMin_display->setValue(value);
+}
+*/
+
+void ColorCreator::on_vMin_sliderReleased()
+{
+    int value = ui->vMin->value();
     vMin[currentColor] = value;
     updateColors();
     QTextStream out(stdout);
     out << "Set V Min value to " << value << "\n";
+    ui->vMin_display->setValue(value);
+}
+
+void ColorCreator::on_vMin_display_valueChanged(int value)
+{
+    ui->vMin->setValue(value);
+    ui->vMin->setSliderDown(false);
 }
 
 void ColorCreator::on_vMax_valueChanged(int value)
