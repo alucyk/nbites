@@ -838,6 +838,7 @@ void ColorCreator::on_nextButton_clicked()
 
 void ColorCreator::on_hMin_valueChanged(int value)
 {
+	//only update the display every update_increment
     if(value%UPDATE_INCREMENT == 0){
 
         hMin[currentColor] = (float)value / 100.0f;
@@ -852,7 +853,7 @@ void ColorCreator::on_hMin_valueChanged(int value)
 void ColorCreator::on_hMin_sliderReleased()
 {
     int value = ui->hMin->value();
-
+    
     if(value%UPDATE_INCREMENT !=0){
         hMin[currentColor] = (float)value / 100.0f;
         updateColors();
@@ -863,6 +864,7 @@ void ColorCreator::on_hMin_sliderReleased()
 
 void ColorCreator::on_hMin_display_valueChanged(int value)
 {
+	//keep the slider and spinbox synched
     if (value != ui->hMin->value()){
         ui->hMin->setValue(value);
 
@@ -880,128 +882,217 @@ void ColorCreator::on_hMin_display_valueChanged(int value)
     //ui->hMin->setValue(value);
 }
 
+//hmax
 void ColorCreator::on_hMax_valueChanged(int value)
 {
+	//only update the display every update_increment
+    if(value%UPDATE_INCREMENT == 0){
+
+        hMax[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set H Max value to " << value << "\n";
+    }
     ui->hMax_display->setValue(value);
 }
+
 
 void ColorCreator::on_hMax_sliderReleased()
 {
     int value = ui->hMax->value();
-    hMax[currentColor] = (float)value / 100.0f;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set H Max value to " << value << "\n";
+    
+    if(value%UPDATE_INCREMENT !=0){
+        hMax[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set H Max value to " << value << "\n";
+    }
 }
+
 
 void ColorCreator::on_hMax_display_valueChanged(int value)
 {
-    hMax[currentColor] = (float)value / 100.0f;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set H Max value to " << value << "\n";
-    ui->hMax->setValue(value);
+	//keep the slider and spinbox synched
+    if (value != ui->hMax->value()){
+        ui->hMax->setValue(value);
+
+        //press and release the slider to invoke sliderReleased
+        ui->hMax->setSliderDown(true);
+        ui->hMax->setSliderDown(false);
+
+    }
+
 }
 
 //S Min
 void ColorCreator::on_sMin_valueChanged(int value)
 {
+	//only update the display every update_increment
+    if(value%UPDATE_INCREMENT == 0){
+
+        sMin[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set S Min value to " << value << "\n";
+    }
     ui->sMin_display->setValue(value);
 }
+
 
 void ColorCreator::on_sMin_sliderReleased()
 {
     int value = ui->sMin->value();
-    sMin[currentColor] = (float)value / 100.0f;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set S Min value to " << value << "\n";
+    
+    if(value%UPDATE_INCREMENT !=0){
+        sMin[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set S Min value to " << value << "\n";
+    }
 }
 
 void ColorCreator::on_sMin_display_valueChanged(int value)
 {
-    sMin[currentColor] = (float)value / 100.0f;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set S Min value to " << value << "\n";
-    ui->sMin->setValue(value);
-}
+	//keep the slider and spinbox synched
+    if (value != ui->sMin->value()){
+        ui->sMin->setValue(value);
 
+        //press and release the slider to invoke sliderReleased
+        ui->sMin->setSliderDown(true);
+        ui->sMin->setSliderDown(false);
+
+    }
+    
+}
 
 
 //sMax
 void ColorCreator::on_sMax_valueChanged(int value)
 {
+	//only update the display every update_increment
+    if(value%UPDATE_INCREMENT == 0){
+
+        sMax[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set S Max value to " << value << "\n";
+    }
     ui->sMax_display->setValue(value);
 }
+
 
 void ColorCreator::on_sMax_sliderReleased()
 {
     int value = ui->sMax->value();
-    sMax[currentColor] = (float)value / 100.0f;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set S max value to " << value << "\n";
+    
+    if(value%UPDATE_INCREMENT !=0){
+        sMax[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set S Max value to " << value << "\n";
+    }
 }
+
 
 void ColorCreator::on_sMax_display_valueChanged(int value)
 {
-    sMax[currentColor] = (float)value / 100.0f;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set S max value to " << value << "\n";
-    ui->sMax->setValue(value);
+	//keep the slider and spinbox synched
+    if (value != ui->sMax->value()){
+        ui->sMax->setValue(value);
+
+        //press and release the slider to invoke sliderReleased
+        ui->sMax->setSliderDown(true);
+        ui->sMax->setSliderDown(false);
+
+    }
+
 }
+
 
 //Y Min
 void ColorCreator::on_yMin_valueChanged(int value)
 {
+	//only update the display every update_increment
+    if(value%UPDATE_INCREMENT == 0){
+
+        yMin[currentColor] = value;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set y Min value to " << value << "\n";
+    }
     ui->yMin_display->setValue(value);
 }
+
 
 void ColorCreator::on_yMin_sliderReleased()
 {
     int value = ui->yMin->value();
-    yMin[currentColor] = value;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set Y Min value to " << value << "\n";
+    
+    if(value%UPDATE_INCREMENT !=0){
+        yMin[currentColor] = value;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set y Min value to " << value << "\n";
+    }
 }
 
 void ColorCreator::on_yMin_display_valueChanged(int value)
 {
-    yMin[currentColor] = value;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set Y Min value to " << value << "\n";
-    ui->yMin->setValue(value);
-}
+	//keep the slider and spinbox synched
+    if (value != ui->yMin->value()){
+        ui->yMin->setValue(value);
 
+        //press and release the slider to invoke sliderReleased
+        ui->yMin->setSliderDown(true);
+        ui->yMin->setSliderDown(false);
+
+    }
+    
+}
 
 
 //yMax
 void ColorCreator::on_yMax_valueChanged(int value)
 {
+	//only update the display every update_increment
+    if(value%UPDATE_INCREMENT == 0){
+
+        yMax[currentColor] = value;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set Y Max value to " << value << "\n";
+    }
     ui->yMax_display->setValue(value);
 }
+
 
 void ColorCreator::on_yMax_sliderReleased()
 {
     int value = ui->yMax->value();
-    yMax[currentColor] = value;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set Y max value to " << value << "\n";
+    
+    if(value%UPDATE_INCREMENT !=0){
+        yMax[currentColor] = value;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set Y Max value to " << value << "\n";
+    }
 }
+
 
 void ColorCreator::on_yMax_display_valueChanged(int value)
 {
-    yMax[currentColor] = value;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set Y max value to " << value << "\n";
-    ui->yMax->setValue(value);
+	//keep the slider and spinbox synched
+    if (value != ui->yMax->value()){
+        ui->yMax->setValue(value);
+
+        //press and release the slider to invoke sliderReleased
+        ui->yMax->setSliderDown(true);
+        ui->yMax->setSliderDown(false);
+
+    }
+
 }
+
 
 void ColorCreator::on_zSlice_valueChanged(int value)
 {
@@ -1036,20 +1127,87 @@ void ColorCreator::on_viewChoice_currentIndexChanged(int index)
     updateThresh(false, true, false);
 }
 
+//Z Min
 void ColorCreator::on_zMin_valueChanged(int value)
 {
-    zMin[currentColor] = (float)value / 100.0f;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set Z Min value to " << value << "\n";
+	//only update the display every update_increment
+    if(value%UPDATE_INCREMENT == 0){
+
+        sMin[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set Z Min value to " << value << "\n";
+    }
+    ui->zMin_display->setValue(value);
 }
 
+
+void ColorCreator::on_zMin_sliderReleased()
+{
+    int value = ui->zMin->value();
+    
+    if(value%UPDATE_INCREMENT !=0){
+        zMin[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set Z Min value to " << value << "\n";
+    }
+}
+
+void ColorCreator::on_zMin_display_valueChanged(int value)
+{
+	//keep the slider and spinbox synched
+    if (value != ui->zMin->value()){
+        ui->zMin->setValue(value);
+
+        //press and release the slider to invoke sliderReleased
+        ui->zMin->setSliderDown(true);
+        ui->zMin->setSliderDown(false);
+
+    }
+    
+}
+
+//zMax
 void ColorCreator::on_zMax_valueChanged(int value)
 {
-    zMax[currentColor] = (float)value / 100.0f;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set Z Max value to " << value << "\n";
+	//only update the display every update_increment
+    if(value%UPDATE_INCREMENT == 0){
+
+        zMax[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set Z Max value to " << value << "\n";
+    }
+    ui->zMax_display->setValue(value);
+}
+
+
+void ColorCreator::on_zMax_sliderReleased()
+{
+    int value = ui->zMax->value();
+    
+    if(value%UPDATE_INCREMENT !=0){
+        zMax[currentColor] = (float)value / 100.0f;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set Z Max value to " << value << "\n";
+    }
+}
+
+
+void ColorCreator::on_zMax_display_valueChanged(int value)
+{
+	//keep the slider and spinbox synched
+    if (value != ui->zMax->value()){
+        ui->zMax->setValue(value);
+
+        //press and release the slider to invoke sliderReleased
+        ui->zMax->setSliderDown(true);
+        ui->zMax->setSliderDown(false);
+
+    }
+
 }
 
 
@@ -1303,28 +1461,88 @@ void ColorCreator::on_vMin_valueChanged(int value)
 }
 */
 
+//Y Min
+void ColorCreator::on_vMin_valueChanged(int value)
+{
+	//only update the display every update_increment
+    if(value%UPDATE_INCREMENT == 0){
+
+        vMin[currentColor] = value;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set V Min value to " << value << "\n";
+    }
+    ui->vMin_display->setValue(value);
+}
+
+
 void ColorCreator::on_vMin_sliderReleased()
 {
     int value = ui->vMin->value();
-    vMin[currentColor] = value;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set V Min value to " << value << "\n";
-    ui->vMin_display->setValue(value);
+    
+    if(value%UPDATE_INCREMENT !=0){
+        vMin[currentColor] = value;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set V Min value to " << value << "\n";
+    }
 }
 
 void ColorCreator::on_vMin_display_valueChanged(int value)
 {
-    ui->vMin->setValue(value);
-    ui->vMin->setSliderDown(false);
+	//keep the slider and spinbox synched
+    if (value != ui->vMin->value()){
+        ui->vMin->setValue(value);
+
+        //press and release the slider to invoke sliderReleased
+        ui->vMin->setSliderDown(true);
+        ui->vMin->setSliderDown(false);
+
+    }
+    
 }
 
+
+//yMax
 void ColorCreator::on_vMax_valueChanged(int value)
 {
-    vMax[currentColor] = value;
-    updateColors();
-    QTextStream out(stdout);
-    out << "Set V Max value to " << value << "\n";
+	//only update the display every update_increment
+    if(value%UPDATE_INCREMENT == 0){
+
+        vMax[currentColor] = value;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set V Max value to " << value << "\n";
+    }
+    ui->vMax_display->setValue(value);
+}
+
+
+void ColorCreator::on_vMax_sliderReleased()
+{
+    int value = ui->vMax->value();
+    
+    if(value%UPDATE_INCREMENT !=0){
+        vMax[currentColor] = value;
+        updateColors();
+        QTextStream out(stdout);
+        out << "Set V Max value to " << value << "\n";
+    }
+}
+
+
+void ColorCreator::on_vMax_display_valueChanged(int value)
+{
+	//keep the slider and spinbox synched
+    if (value != ui->vMax->value()){
+        ui->vMax->setValue(value);
+
+        //press and release the slider to invoke sliderReleased
+        ui->vMax->setSliderDown(true);
+        ui->vMax->setSliderDown(false);
+
+    }
+
 }
 
 void ColorCreator::on_radioButton_clicked()

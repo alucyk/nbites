@@ -138,8 +138,16 @@ private slots:
     void on_viewChoice_currentIndexChanged(int index);
 
     void on_zMin_valueChanged(int value);
+    
+    void on_zMin_sliderReleased();
+
+    void on_zMin_display_valueChanged(int value);
 
     void on_zMax_valueChanged(int value);
+    
+    void on_zMax_sliderReleased();
+
+    void on_zMax_display_valueChanged(int value);
 
     void on_getColorTable_clicked();
 
@@ -165,13 +173,17 @@ private slots:
 
     void on_edgeDiff_valueChanged(int value);
 
-    // void on_vMin_valueChanged(int value);
+    void on_vMin_valueChanged(int value);
 
     void on_vMin_sliderReleased();
 
     void on_vMin_display_valueChanged(int value);
 
     void on_vMax_valueChanged(int value);
+    
+    void on_vMax_sliderReleased();
+
+    void on_vMax_display_valueChanged(int value);
 
 private:
     Ui::ColorCreator *ui;
