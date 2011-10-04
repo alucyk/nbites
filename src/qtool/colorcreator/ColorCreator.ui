@@ -58,8 +58,8 @@
   <widget class="QSlider" name="hMin">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>280</y>
+     <x>770</x>
+     <y>380</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -74,8 +74,8 @@
   <widget class="QSlider" name="hMax">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>310</y>
+     <x>770</x>
+     <y>470</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -90,8 +90,8 @@
   <widget class="QSlider" name="sMin">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>340</y>
+     <x>770</x>
+     <y>380</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -106,8 +106,8 @@
   <widget class="QSlider" name="sMax">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>370</y>
+     <x>770</x>
+     <y>470</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -125,8 +125,8 @@
   <widget class="QSlider" name="yMin">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>460</y>
+     <x>770</x>
+     <y>380</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -153,8 +153,8 @@
   <widget class="QSlider" name="yMax">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>490</y>
+     <x>770</x>
+     <y>470</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -230,79 +230,27 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>940</x>
-     <y>290</y>
+     <x>810</x>
+     <y>360</y>
      <width>62</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>H Min</string>
+    <string>Min</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>940</x>
-     <y>320</y>
+     <x>810</x>
+     <y>450</y>
      <width>62</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>H Max</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>350</y>
-     <width>62</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>S Min</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>380</y>
-     <width>62</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>S Max</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>460</y>
-     <width>62</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Y Min</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>490</y>
-     <width>62</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Y Max</string>
+    <string>Max</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
@@ -324,8 +272,8 @@
   <widget class="QSlider" name="zMin">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>400</y>
+     <x>770</x>
+     <y>380</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -337,40 +285,14 @@
   <widget class="QSlider" name="zMax">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>430</y>
+     <x>770</x>
+     <y>470</y>
      <width>160</width>
      <height>22</height>
     </rect>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>410</y>
-     <width>62</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Z Min</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_10">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>430</y>
-     <width>62</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Z Max</string>
    </property>
   </widget>
   <widget class="QPushButton" name="getColorTable">
@@ -518,8 +440,8 @@
   <widget class="QSlider" name="vMin">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>530</y>
+     <x>770</x>
+     <y>380</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -543,8 +465,8 @@
   <widget class="QSlider" name="vMax">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>570</y>
+     <x>770</x>
+     <y>470</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -571,36 +493,10 @@
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="label_11">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>530</y>
-     <width>62</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>V Min</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_12">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>570</y>
-     <width>62</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>V Max</string>
-   </property>
-  </widget>
   <widget class="QRadioButton" name="radioButton">
    <property name="geometry">
     <rect>
-     <x>650</x>
+     <x>800</x>
      <y>770</y>
      <width>102</width>
      <height>20</height>
@@ -613,7 +509,7 @@
   <widget class="QRadioButton" name="ColorChange">
    <property name="geometry">
     <rect>
-     <x>640</x>
+     <x>800</x>
      <y>800</y>
      <width>111</width>
      <height>16</height>
@@ -639,8 +535,8 @@
   <widget class="QSpinBox" name="hMin_display">
    <property name="geometry">
     <rect>
-     <x>697</x>
-     <y>280</y>
+     <x>700</x>
+     <y>380</y>
      <width>59</width>
      <height>27</height>
     </rect>
@@ -652,8 +548,8 @@
   <widget class="QSpinBox" name="hMax_display">
    <property name="geometry">
     <rect>
-     <x>697</x>
-     <y>310</y>
+     <x>700</x>
+     <y>470</y>
      <width>59</width>
      <height>27</height>
     </rect>
@@ -665,8 +561,8 @@
   <widget class="QSpinBox" name="sMin_display">
    <property name="geometry">
     <rect>
-     <x>697</x>
-     <y>340</y>
+     <x>700</x>
+     <y>380</y>
      <width>59</width>
      <height>27</height>
     </rect>
@@ -678,8 +574,8 @@
   <widget class="QSpinBox" name="sMax_display">
    <property name="geometry">
     <rect>
-     <x>697</x>
-     <y>370</y>
+     <x>700</x>
+     <y>470</y>
      <width>59</width>
      <height>27</height>
     </rect>
@@ -691,8 +587,8 @@
   <widget class="QSpinBox" name="zMin_display">
    <property name="geometry">
     <rect>
-     <x>697</x>
-     <y>400</y>
+     <x>700</x>
+     <y>380</y>
      <width>59</width>
      <height>27</height>
     </rect>
@@ -701,8 +597,8 @@
   <widget class="QSpinBox" name="zMax_display">
    <property name="geometry">
     <rect>
-     <x>697</x>
-     <y>430</y>
+     <x>700</x>
+     <y>470</y>
      <width>59</width>
      <height>27</height>
     </rect>
@@ -711,8 +607,8 @@
   <widget class="QSpinBox" name="yMin_display">
    <property name="geometry">
     <rect>
-     <x>697</x>
-     <y>460</y>
+     <x>700</x>
+     <y>380</y>
      <width>59</width>
      <height>27</height>
     </rect>
@@ -727,8 +623,8 @@
   <widget class="QSpinBox" name="yMax_display">
    <property name="geometry">
     <rect>
-     <x>697</x>
-     <y>490</y>
+     <x>700</x>
+     <y>470</y>
      <width>59</width>
      <height>27</height>
     </rect>
@@ -743,8 +639,8 @@
   <widget class="QSpinBox" name="vMin_display">
    <property name="geometry">
     <rect>
-     <x>697</x>
-     <y>530</y>
+     <x>700</x>
+     <y>380</y>
      <width>59</width>
      <height>27</height>
     </rect>
@@ -759,8 +655,8 @@
   <widget class="QSpinBox" name="vMax_display">
    <property name="geometry">
     <rect>
-     <x>697</x>
-     <y>569</y>
+     <x>700</x>
+     <y>470</y>
      <width>59</width>
      <height>27</height>
     </rect>
@@ -782,25 +678,54 @@
     </rect>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="channelSelect">
    <property name="geometry">
     <rect>
-     <x>787</x>
-     <y>784</y>
-     <width>141</width>
+     <x>860</x>
+     <y>305</y>
+     <width>41</width>
      <height>27</height>
     </rect>
    </property>
-   <item>
-    <property name="text">
-     <string>Table Mode</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Define/Undefine</string>
-    </property>
-   </item>
+  </widget>
+  <widget class="QLabel" name="channel_label">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>310</y>
+     <width>121</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Current Channel:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="minUndoButton">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>380</y>
+     <width>51</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="maxUndoButton">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>470</y>
+     <width>51</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
   </widget>
   <widget class="QRadioButton" name="hRadio">
    <property name="geometry">

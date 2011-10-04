@@ -43,6 +43,7 @@
 #define NAVY_COL 0x40
 
 #define UPDATE_INCREMENT 10
+#define INVALID_UNDO_VALUE -1
 
 namespace Ui {
     class ColorCreator;
@@ -57,6 +58,7 @@ class ColorCreator : public QWidget, public Subscriber<data::MObject_ID>
 
 public:
     enum Colors {Orange, Blue, Yellow, Green, White, Pink, Navy, Black, BlueGreen, BlueNavy, OrangeRed};
+    enum Channels {H_channel, S_channel, Z_channel, Y_channel, V_channel};
     enum Choices {Single, Multiple};
     enum Shape { Y, U, V, Bluec, Redc, Greenc, H, S, Z, EDGE, Table};
     ColorCreator(qtool::data::DataManager::ptr dataManager,
@@ -95,9 +97,15 @@ private slots:
 
     void on_nextButton_clicked();
 
+    void on_minUndoButton_clicked();
+
+    void on_maxUndoButton_clicked();
+
     void on_hMin_valueChanged(int value);
 
     void on_hMin_sliderReleased();
+
+    void on_hMin_sliderPressed();
 
     void on_hMin_display_valueChanged(int value);
 
@@ -105,11 +113,15 @@ private slots:
 
     void on_hMax_sliderReleased();
 
+    void on_hMax_sliderPressed();
+
     void on_hMax_display_valueChanged(int value);
 
     void on_sMin_valueChanged(int value);
 
     void on_sMin_sliderReleased();
+
+    void on_sMin_sliderPressed();
 
     void on_sMin_display_valueChanged(int value);
 
@@ -117,11 +129,15 @@ private slots:
 
     void on_sMax_sliderReleased();
 
+    void on_sMax_sliderPressed();
+
     void on_sMax_display_valueChanged(int value);
 
     void on_yMin_valueChanged(int value);
 
     void on_yMin_sliderReleased();
+
+    void on_yMin_sliderPressed();
 
     void on_yMin_display_valueChanged(int value);
 
@@ -129,17 +145,33 @@ private slots:
 
     void on_yMax_sliderReleased();
 
+    void on_yMax_sliderPressed();
+
     void on_yMax_display_valueChanged(int value);
 
     void on_zSlice_valueChanged(int value);
 
     void on_colorSelect_currentIndexChanged(int index);
 
+    void on_channelSelect_currentIndexChanged(int index);
+
     void on_viewChoice_currentIndexChanged(int index);
 
     void on_zMin_valueChanged(int value);
+    
+    void on_zMin_sliderReleased();
+
+    void on_zMin_sliderPressed();
+
+    void on_zMin_display_valueChanged(int value);
 
     void on_zMax_valueChanged(int value);
+
+    void on_zMax_sliderReleased();
+
+    void on_zMax_sliderPressed();
+
+    void on_zMax_display_valueChanged(int value);
 
     void on_getColorTable_clicked();
 
@@ -165,13 +197,21 @@ private slots:
 
     void on_edgeDiff_valueChanged(int value);
 
-    // void on_vMin_valueChanged(int value);
+    void on_vMin_valueChanged(int value);
 
     void on_vMin_sliderReleased();
+
+    void on_vMin_sliderPressed();
 
     void on_vMin_display_valueChanged(int value);
 
     void on_vMax_valueChanged(int value);
+    
+    void on_vMax_sliderReleased();
+
+    void on_vMax_sliderPressed();
+
+    void on_vMax_display_valueChanged(int value);
 
 private:
     Ui::ColorCreator *ui;
@@ -215,7 +255,10 @@ private:
     int *vMax;
     float statsHMin, statsHMax, statsSMin, statsSMax, statsZMin, statsZMax;
     int statsYMin, statsYMax, statsUMin, statsUMax, statsVMin, statsVMax;
+    int minUndoValue;
+    int maxUndoValue;
     int currentColor;
+    int currentChannel;
     ColorEdit *green;
     unsigned *bitColor;
     bool haveFile;
